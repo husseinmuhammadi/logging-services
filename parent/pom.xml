@@ -12,6 +12,7 @@
 
     <modules>
         <module>../slf4j-simple-binding</module>
+        <module>../slf4j-logback</module>
     </modules>
 
 </project>

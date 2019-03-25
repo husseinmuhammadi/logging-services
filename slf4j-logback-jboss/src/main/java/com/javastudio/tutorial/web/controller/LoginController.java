@@ -1,5 +1,8 @@
 package com.javastudio.tutorial.web.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
@@ -7,9 +10,13 @@ import javax.inject.Named;
 @RequestScoped
 public class LoginController {
 
+    Logger logger = LoggerFactory.getLogger(LoginController.class);
+
     private String username = "Narges";
 
     public String getUsername() {
+        System.out.println("STDOUT --> Hello");
+        logger.info("Logger --> Hello");
         return username;
     }
 

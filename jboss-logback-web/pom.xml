@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.javastudio.tutorial.logging</groupId>
-    <artifactId>logging-services-slf4j-logback-jboss</artifactId>
+    <artifactId>jboss-logback-web</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>war</packaging>
@@ -22,7 +22,7 @@
     </properties>
 
     <build>
-        <finalName>slf4j-logback-jboss</finalName>
+        <finalName>jboss-logback-web</finalName>
 
         <plugins>
             <plugin>

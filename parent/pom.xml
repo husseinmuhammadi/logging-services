@@ -13,7 +13,7 @@
     <modules>
         <!--<module>../slf4j-simple-binding</module>-->
         <!--<module>../slf4j-logback</module>-->
-        <module>../slf4j-logback-jboss</module>
+        <module>../jboss-logback-web</module>
     </modules>
 
 </project>

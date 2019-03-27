@@ -14,6 +14,7 @@
         <!--<module>../slf4j-simple-binding</module>-->
         <!--<module>../slf4j-logback</module>-->
         <module>../jboss-logback-web</module>
+        <module>../jboss-logback-ear</module>
     </modules>
 
 </project>

@@ -15,7 +15,6 @@ public class LoginController {
     private String username = "Narges";
 
     public String getUsername() {
-        System.out.println("STDOUT --> Hello");
         logger.info("Logger --> Hello");
         return username;
     }

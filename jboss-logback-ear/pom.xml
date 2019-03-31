@@ -45,6 +45,11 @@
                             <bundleFileName>jboss-logback-web.war</bundleFileName>
                             <contextRoot>jboss-logback-web</contextRoot>
                         </webModule>
+                        <ejbModule>
+                            <groupId>com.javastudio.tutorial.logging</groupId>
+                            <artifactId>jboss-logback-ejb</artifactId>
+                            <bundleFileName>jboss-logback-ejb.jar</bundleFileName>
+                        </ejbModule>
                     </modules>
                 </configuration>
             </plugin>
@@ -84,6 +89,13 @@
             <artifactId>jboss-logback-web</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.javastudio.tutorial.logging</groupId>
+            <artifactId>jboss-logback-ejb</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>ejb</type>
         </dependency>
 
         <dependency>

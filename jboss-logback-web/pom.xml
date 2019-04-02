@@ -10,6 +10,8 @@
 
     <packaging>war</packaging>
 
+    <url>http://javastudio.com/tutorial</url>
+
     <properties>
         <javase.version>1.8</javase.version>
         <javaee.version>8.0</javaee.version>
@@ -46,6 +48,14 @@
                 <configuration>
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>
+
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                        <manifestEntries>
+                            <url>${project.url}</url>
+                            <Class-Path>logback</Class-Path>
+                        </manifestEntries>
                     </archive>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>

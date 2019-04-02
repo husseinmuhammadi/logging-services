@@ -39,7 +39,7 @@
                         </goals>
                         <configuration>
                             <!-- Work Directory of Ear plugin -->
-                            <outputDirectory>${project.build.directory}/${project.build.finalName}/lib</outputDirectory>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}/logback</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>src/main/resources</directory>

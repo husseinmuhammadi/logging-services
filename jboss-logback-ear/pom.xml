@@ -39,7 +39,7 @@
                         </goals>
                         <configuration>
                             <!-- Work Directory of Ear plugin -->
-                            <outputDirectory>${project.build.directory}/${project.build.finalName}/classes</outputDirectory>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}/lib</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>src/main/resources</directory>
@@ -69,13 +69,13 @@
                             <groupId>com.javastudio.tutorial.logging</groupId>
                             <artifactId>jboss-logback-web</artifactId>
                             <bundleFileName>jboss-logback-web.war</bundleFileName>
-                            <contextRoot>jboss-logback-web</contextRoot>
+                            <contextRoot>jboss-logback</contextRoot>
                         </webModule>
-                        <ejbModule>
-                            <groupId>com.javastudio.tutorial.logging</groupId>
-                            <artifactId>jboss-logback-ejb</artifactId>
-                            <bundleFileName>jboss-logback-ejb.jar</bundleFileName>
-                        </ejbModule>
+                        <!--<ejbModule>-->
+                            <!--<groupId>com.javastudio.tutorial.logging</groupId>-->
+                            <!--<artifactId>jboss-logback-ejb</artifactId>-->
+                            <!--<bundleFileName>jboss-logback-ejb.jar</bundleFileName>-->
+                        <!--</ejbModule>-->
                     </modules>
                 </configuration>
             </plugin>
@@ -117,17 +117,11 @@
             <type>war</type>
         </dependency>
 
-        <dependency>
-            <groupId>com.javastudio.tutorial.logging</groupId>
-            <artifactId>jboss-logback-ejb</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <type>ejb</type>
-        </dependency>
-
-        <dependency>
-            <groupId>com.javastudio.tutorial.logging</groupId>
-            <artifactId>logger</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.javastudio.tutorial.logging</groupId>-->
+            <!--<artifactId>jboss-logback-ejb</artifactId>-->
+            <!--<version>1.0.0-SNAPSHOT</version>-->
+            <!--<type>ejb</type>-->
+        <!--</dependency>-->
     </dependencies>
 </project>

@@ -6,9 +6,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+    <h:messages id="messages"/>
     <h:form>
-        <h:outputLabel value="Counter: #{loginController.counter}"/>
-        <h:commandButton value="Raise" action="#{loginController.increase}"/>
+        <h:commandButton value="Login" action="#{loginController.login}"/>
     </h:form>
 </f:view>
 </html>

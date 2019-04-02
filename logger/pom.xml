@@ -10,6 +10,8 @@
 
     <packaging>jar</packaging>
 
+    <url>http://javastudio.com/tutorial</url>
+
     <properties>
         <javase.version>1.8</javase.version>
         <javaee.version>8.0</javaee.version>
@@ -35,6 +37,29 @@
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib</classpathPrefix>
+                            <!--<classpathLayoutType>repository</classpathLayoutType>-->
+
+                            <!--<mainClass>com.javastudio.tutorial.Startup</mainClass>-->
+                        </manifest>
+                        <manifestEntries>
+                            <mode>development</mode>
+                            <url>${project.url}</url>
+                            <!--<key>value</key>-->
+                            <Class-Path>classes</Class-Path>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
             </plugin>
 

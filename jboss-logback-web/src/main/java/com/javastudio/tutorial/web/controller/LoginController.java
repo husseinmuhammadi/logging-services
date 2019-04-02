@@ -1,6 +1,7 @@
 package com.javastudio.tutorial.web.controller;
 
 import com.javastudio.tutorial.service.LoginService;
+import com.javastudio.tutorial.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +21,8 @@ public class LoginController implements Serializable {
 
     @EJB
     LoginService loginServic;
+    @EJB
+    UserService userService;
 
     public void login() {
         try {
@@ -29,6 +32,7 @@ public class LoginController implements Serializable {
             }
 
             loginServic.login();
+            userService.login();
 
             logger.info("Logged in done successfully.");
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("You have logged in successfully"));

@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.javastudio.tutorial.logging</groupId>
-    <artifactId>jboss-logback-web</artifactId>
+    <artifactId>jboss-logback-ejb-service</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <packaging>war</packaging>
+    <packaging>ejb</packaging>
 
     <url>http://javastudio.com/tutorial</url>
 
@@ -24,7 +24,7 @@
     </properties>
 
     <build>
-        <finalName>jboss-logback-web</finalName>
+        <finalName>jboss-logback-ejb-service</finalName>
 
         <plugins>
             <plugin>
@@ -38,27 +38,6 @@
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <archive>
-                        <addMavenDescriptor>false</addMavenDescriptor>
-
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                        </manifest>
-                        <manifestEntries>
-                            <url>${project.url}</url>
-                            <Class-Path>logback</Class-Path>
-                        </manifestEntries>
-                    </archive>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
                 </configuration>
             </plugin>
 
@@ -88,6 +67,26 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <generateClient>true</generateClient>
+                    <archive>
+                        <addMavenDescriptor>true</addMavenDescriptor>
+
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                        <manifestEntries>
+                            <url>${project.url}</url>
+                            <Class-Path>logback</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -109,25 +108,13 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
             <version>${logback.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.javastudio.tutorial.logging</groupId>
-            <artifactId>jboss-logback-ejb</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.javastudio.tutorial.logging</groupId>
-            <artifactId>jboss-logback-ejb-service</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

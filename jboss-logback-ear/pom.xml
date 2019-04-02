@@ -77,6 +77,12 @@
                             <artifactId>jboss-logback-ejb</artifactId>
                             <bundleFileName>jboss-logback-ejb.jar</bundleFileName>
                         </ejbModule>
+
+                        <ejbModule>
+                            <groupId>com.javastudio.tutorial.logging</groupId>
+                            <artifactId>jboss-logback-ejb-service</artifactId>
+                            <bundleFileName>jboss-logback-ejb-service.jar</bundleFileName>
+                        </ejbModule>
                     </modules>
                 </configuration>
             </plugin>
@@ -121,6 +127,13 @@
         <dependency>
             <groupId>com.javastudio.tutorial.logging</groupId>
             <artifactId>jboss-logback-ejb</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>ejb</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.javastudio.tutorial.logging</groupId>
+            <artifactId>jboss-logback-ejb-service</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <type>ejb</type>
         </dependency>

@@ -17,15 +17,15 @@ import java.io.Serializable;
 @RequestScoped
 public class LoginController implements Serializable {
 
-    // private final Logger logger = LoggerFactory.getLogger(LoginController.class);
+    private final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @EJB
     LoginService loginServic;
+
     @EJB
     UserService userService;
 
     public void login() {
-        final Logger logger = LoggerFactory.getLogger(LoginController.class);
         try {
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream("logback.xml");
             if (inputStream == null) {

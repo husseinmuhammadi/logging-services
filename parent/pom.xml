@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <!--<module>../logger</module>-->
+        <module>../logger</module>
         <!--<module>../slf4j-simple-binding</module>-->
         <!--<module>../slf4j-logback</module>-->
         <module>../jboss-logback-ejb</module>

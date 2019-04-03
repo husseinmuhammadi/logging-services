@@ -54,20 +54,6 @@ Add dependencies with provided scope to all modules such as web, api, service an
         <artifactId>slf4j-api</artifactId>
         <version>${slf4j.version}</version>
         <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-classic</artifactId>
-        <version>${logback.version}</version>
-        <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-core</artifactId>
-        <version>${logback.version}</version>
-        <scope>provided</scope>
-    </dependency>
+    </dependency>    
 
 and these dependencies with scope compile to ear file as a shared library

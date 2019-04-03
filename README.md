@@ -33,7 +33,18 @@ reference: http://mailman.qos.ch/pipermail/logback-user/2012-April/003087.html
 3. In your WAR/EJB file's MANIFEST.MF file, add this new folder to the 
 classpath:
         
-       Class-Path: conf
+        Class-Path: conf
+
+        <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+        
+            <manifest>
+                <addClasspath>true</addClasspath>
+            </manifest>
+            <manifestEntries>
+                <Class-Path>conf</Class-Path>
+            </manifestEntries>
+        </archive>
 
 ### slf4j, binding and logging framework implementation libraries
 Add dependencies with provided scope to all modules such as web, api, service and model

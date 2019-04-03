@@ -23,12 +23,13 @@
     </sub-deployment>
 
     <!--<sub-deployment name="jboss-logback-ejb.jar">-->
-        <!--<exclusions>-->
-            <!--<module name='org.slf4j'/>-->
-            <!--<module name='org.slf4j.impl'/>-->
-        <!--</exclusions>-->
         <!--<exclude-subsystems>-->
-            <!--<subsystem name="logging" />-->
+            <!--<subsystem name="logging"/>-->
+        <!--</exclude-subsystems>-->
+    <!--</sub-deployment>-->
+    <!--<sub-deployment name="jboss-logback-ejb-service.jar">-->
+        <!--<exclude-subsystems>-->
+            <!--<subsystem name="logging"/>-->
         <!--</exclude-subsystems>-->
     <!--</sub-deployment>-->
 </jboss-deployment-structure>

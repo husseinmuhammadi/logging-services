@@ -12,7 +12,7 @@ public class DebugListener implements PhaseListener {
     private static final long serialVersionUID = 1069270717751614672L;
 
     @Inject
-    Logger logger;
+    private Logger logger;
 
     @Override
     public void beforePhase(PhaseEvent event) {

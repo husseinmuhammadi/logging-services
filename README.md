@@ -75,3 +75,41 @@ and these dependencies with scope compile to ear file as a shared library
         <artifactId>logback-core</artifactId>
         <version>${logback.version}</version>
     </dependency>
+    
+    
+### Using separate module for loging
+Create new module for logging purpose 
+Add dependencies to slf4j, logback-classic (logger binder) and logback implementation
+
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+    </dependency>    
+    
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>${logback.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>${logback.version}</version>
+    </dependency>
+    
+Add LoggerProvider and don't forget to add beans.xml in META-INF 
+
+    public class LoggerProvider {
+        @Produces
+        public Logger getLogger(InjectionPoint injectionPoint) {
+            return LoggerFactory.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
+        }
+    }
+
+In the other modules remove dependencies to slf4j, logback-classic and add dependency to logger module with provided scope
+
+In the ear module remove dependencies to slf4j, logback-classic and add dependency to logger module 
+
+For using logger you can easily inject it.
